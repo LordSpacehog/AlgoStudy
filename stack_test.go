@@ -77,3 +77,19 @@ func BenchmarkStack(b *testing.B) {
 		_, _ = stack.Pop()
 	}
 }
+
+func ExampleStack() {
+	// Initialize New Stack
+	stack := NewStack()
+
+	// Push Data Onto Stack
+	stack.Push("test!")
+
+	// Pop Data Off Stack
+	data, err := stack.Pop()
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(data)
+}
