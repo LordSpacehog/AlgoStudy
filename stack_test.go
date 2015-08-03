@@ -92,4 +92,5 @@ func ExampleStack() {
 	}
 
 	fmt.Println(data)
+	// Output: Test!
 }
