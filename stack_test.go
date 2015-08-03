@@ -83,7 +83,7 @@ func ExampleStack() {
 	stack := NewStack()
 
 	// Push Data Onto Stack
-	stack.Push("test!")
+	stack.Push("Test!")
 
 	// Pop Data Off Stack
 	data, err := stack.Pop()
