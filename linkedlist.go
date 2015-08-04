@@ -119,11 +119,13 @@ func (l *LinkedList) RemoveHead() {
 
 func (l *LinkedList) RemoveTail() {
 	var cur, prev *Node
+	cur = l.head
 	for cur.Next != nil {
 		prev = cur
 		cur = cur.Next
 	}
 	prev.Next = nil
+	l.tail = prev
 	l.length -= 1
 }
 
@@ -159,6 +161,9 @@ func (l *LinkedList) RemoveByPosition(p int) error {
 			l.length -= 1
 			return nil
 		}
+		prev = cur
+		cur = cur.Next
+		i++
 	}
 
 	return errors.New("Hit end of list before desired position.")
@@ -178,6 +183,7 @@ func (l *LinkedList) Get(p int) (string, error) {
 			return cur.Data, nil
 		}
 		cur = cur.Next
+		i++
 	}
 
 	return "", errors.New("Hit end of list before provided index.")

@@ -71,8 +71,9 @@ func TestPop(t *testing.T) {
 }
 
 func BenchmarkStack(b *testing.B) {
+	stack := NewStack()
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		stack := NewStack()
 		stack.Push("test")
 		_, _ = stack.Pop()
 	}
